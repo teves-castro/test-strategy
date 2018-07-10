@@ -1,7 +1,7 @@
-import * as React from 'react';
-import './App.css';
+import * as React from "react"
+import "./App.css"
 
-import logo from './logo.svg';
+import logo from "./logo.svg"
 
 class App extends React.Component {
   public render() {
@@ -14,9 +14,16 @@ class App extends React.Component {
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <button onClick={this.clickHandler}>Click Me</button>
       </div>
-    );
+    )
   }
+
+  // tslint:disable-next-line:no-console
+  private clickHandler = () =>
+    fetch("http://localhost:3001/api")
+      .then(r => r.json())
+      .then(console.log)
 }
 
-export default App;
+export default App
