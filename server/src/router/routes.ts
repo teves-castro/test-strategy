@@ -7,6 +7,6 @@ export default class Routes {
     const router: express.Router = express.Router()
     server.app.use("/", router)
 
-    server.app.use("/api", new ApiRouter().router)
+    server.app.use("/api", new ApiRouter(server.apiKey).router)
   }
 }
